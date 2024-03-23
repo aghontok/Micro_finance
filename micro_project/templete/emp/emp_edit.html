@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%block content%}
+<div class="container-fluid">
+    <div>
+        {%if messages%}
+        <ul class="messages">
+            {%for message in messages%}
+            <li {%if message.tag%} class="{{message.tag}}" {%endif%}>
+                {{message}}
+            </li>
+            {%endfor%}
+
+        </ul>
+        {%endif%}
+    </div>
+    <div>
+        <h2></h2>
+    </div>
+    <div>
+        <a href="{%url 'list_emp'%}">Back</a>
+    </div>
+    <div class="card px-2 ms-4" style="width:75em;">
+        <div class="card-body">
+            <div class="card-title p-2">
+                <h3> Update Employee Information</h3>
+            </div>
+            <div>
+                <form method="post" enctype="multipart/form-data">
+                     {%csrf_token%}
+                    <div class="row">
+                        <div class="row col-12">
+                            <label class="form-label col-3">First Name:</label>
+                            <div class=" col-9">{{form.emp_first_name}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <label class="form-label col-3">Last Name:</label>
+                            <div class=" col-9">{{form.emp_last_name}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <label class="form-label col-3">Father Name:</label>
+                            <div class="col-9">{{form.emp_father_name}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <label class="form-label col-3">Mother Name</label>
+                            <div class="col-9">{{form.emp_mother_name}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="form-label col-3">Gender</div>
+                            <div class="col-9">{{form.emp_gender}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="form-label col-3">Married Status</div>
+                            <div class="col-9">{{form.emp_married}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="form-label col-3">Address</div>
+                            <div class="col-9">{{form.emp_address}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="form-label col-3">Date of Birth</div>
+                            <div class="col-9">{{form.emp_bod}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="form-label col-3">Blood Group</div>
+                            <div class="col-9">{{form.emp_blood}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="form-label col-3">Mobile</div>
+                            <div class="col-9">{{form.emp_phone}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="form-label col-3">Email</div>
+                            <div class="col-9">{{form.emp_email}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="form-label col-3">Designation</div>
+                            <div class="col-9">{{form.emp_job}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="form-label col-3">Salary</div>
+                            <div class="col-9">{{form.emp_salary}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="form-label col-3">Manager</div>
+                            <div class="col-9">{{form.emp_manager}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="form-label col-3">Branch</div>
+                            <div class="col-9">{{form.emp_branch}}</div>
+                        </div>
+                        <div class="row col-12">
+                            <div class="form-label col-3">Photo</div>
+                            <div class="col-9">{{form.emp_photo}}</div>
+                        </div>
+
+
+
+                    </div>
+
+
+                    <div><button type="submit">Save</button></div>
+               </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+{%endblock%}
+</body>
+</html>

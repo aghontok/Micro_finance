@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+/* {%extends 'base.html'%}
+{%block content%} */
+<div>
+    <div>
+        <div><h2 class="class1">Branch information</h2></div>
+        <div><a id="btn" href="{%url 'add_bran'%}">+Add New</a> </div>
+    </div>
+
+    <div class="cont">
+        <table class="tab">
+            <tr class="tab-th">
+                <th class="tab-sell">Name</th>
+                <th class="tab-sell">Address</th>
+                <th class="tab-sell">Location</th>
+                <th>
+                </th>
+                <th></th>
+            </tr >
+            {%for b in bran%}
+            <tr class="tab-td">
+                <td>{{b.bran_name|title}}</td>
+                <td>{{b.bran_address|title}}</td>
+                <td>{{b.bran_location|title}}</td>
+
+                <td><a class="mbtn" href="{%url 'edit_bran' b.bran_id%}">Edit</a></td>
+                <td><a  class="mbtn" href="{%url 'del_bran' b.bran_id%}">Delete</a></td>
+
+            </tr>
+
+            {%endfor%}
+        </table>
+    </div>
+    <div id="MyModal" class="modal-xl" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content"></div>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+
+    $('#btn').on('click', function(){
+      $('#MyModal').modal('show').find('.modal-content').load($(this).attr('href'));
+    });
+
+    $(document).ready(function(){
+     $("").click(function(){
+       $("").hide();
+     });
+    });
+
+
+
+</script>
+
+{%endblock%}
+</body>
+</html>

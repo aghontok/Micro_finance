@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%block content%}
+<div>
+    <div>
+        <h2>
+            Member Info
+        </h2>
+    </div>
+
+    <div>
+        <a href="{%url 'crt_mem'%}">+Add New</a>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+
+            </tr>
+            {%for m in mem%}
+            <tr>
+
+                <td>{{m.mem_first_name|title}} {{m.mem_last_name|title}}</td>
+                <td> <a href="{%url 'details_mem' m.mem_id %}">Details</a> </td>
+                <td> <a href="{%url 'del_mem' m.mem_id%}">Delete</a> </td>
+
+
+            </tr>
+            {%endfor%}
+
+        </table>
+    </div>
+</div>
+{%endblock%}
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div>
+        {%if messages%}
+        <ul class="messages">
+            {%for message in messages%}
+            <li {%if message.tag%} class="{{message.tag}}" {%endif%}>
+                {{message}}
+            </li>
+            {%endfor%}
+
+        </ul>
+        {%endif%}
+    </div>
+    <div><h2>Updated Information</h2></div>
+    <div>
+        <div>City: {{city}}</div>
+        <div>District: {{district}}</div>
+        <div>Division :{{division}}</div>
+    </div>
+    <div>
+        <a href="{%url 'list_loc'%}">Back</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%block content%}
+<div>
+    <div><h2>Groups Information</h2></div>
+    <div>
+        <a href="{%url 'crt_gro'%}">+Add</a>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Area</th>
+                <th>Branch</th>
+            </tr>
+            {%for g in gr%}
+            <tr>
+                <td>{{g.gro_name}}</td>
+                <td>{{g.gro_area}}</td>
+                <td>{{g.gro_bran}}</td>
+                <td><a href="{%url 'edit_gro' g.gro_id%}">Edit</a> </td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+</div>
+{%endblock%}
+</body>
+</html>

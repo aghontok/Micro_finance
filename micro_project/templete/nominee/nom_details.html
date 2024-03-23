@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%block content%}
+<div>
+    <div>
+        <h2>Individual Nominee information</h2>
+    </div>
+    <div>
+        <div><label>Name: {{nom.nom_first_name}} {{nom.nom_last_name</label></div>
+        <div><label>Father Name: {{nom.nom_father_name}}</label></div>
+        <div><label>Mother Name: {{nom.nom_mother_name}}</label></div>
+        <div><label>Married status: {{nom.nom_married}}</label></div>
+        <div><label>Present Address: {{nom.nom_address_pre}}</label></div>
+        <div><label>Permanent Address: {{nom.nom_address_pa}}</label></div>
+        <div><label>Phone no: {{nom.nom_phone}}</label></div>
+        <div><label>Email: {{nom.nom_email}}</label></div>
+        <div><label>Gender: {{nom.nom_email}}</label></div>
+        <div><label>Birth Date: {{nom.nom_date}}</label></div>
+        <div><label>Blood group: {{nom.nom_blood}}</label></div>
+        <div><label>Religion: {{nom.nom_religion}}</label></div>
+        <div><label>NID: {{nom.nom_nid}}</label></div>
+        <div><label>Relation: {{nom.nom_reletion}}</label></div>
+        <div><label>Member Name: {{nom.nom_member}}</label></div>
+
+
+    </div>
+    <div>
+        <a href="{%url 'edit_nom' nom.nom_id%}">Edit</a>
+    </div>
+</div>
+
+{%endblock%}
+</body>
+</html>

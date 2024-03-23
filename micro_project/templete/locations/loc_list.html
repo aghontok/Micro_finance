@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html' %}
+{%block content%}
+<div>
+    <div>
+        <h2>Location  Information</h2>
+        <div>
+            <a href="{%url 'add_loc'%}">+Add New</a>
+        </div>
+    </div>
+    <div class="cont">
+        <table class="tab">
+            <tr class="tab-th">
+                <th class="tab-sell">City Name</th>
+                <th class="tab-sell">District Name</th>
+                <th class="tab-sell">Division Name</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {%for l in loc%}
+            <tr class="tab-td">
+                <td>{{l.loc_city|title}}</td>
+                <td>{{l.loc_district|title}}</td>
+                <td>{{l.loc_division|title}}</td>
+                <td><a  class="mbtn" href=" {%url 'edit_loc' l.loc_id %}">Edit</a></td>
+                <td><a  class="mbtn" href="{%url 'del_loc' l.loc_id %}">Delete</a> </td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+</div>
+{%endblock%}
+</body>
+</html>

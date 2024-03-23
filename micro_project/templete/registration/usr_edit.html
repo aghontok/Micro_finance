@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%block content%}
+<div>
+    <div>
+        {%if messages%}
+        <ul class="messages">
+            {%for message in messages%}
+            <li {%if message.tag%} class="{{message.tag}}" {%endif%}>
+                {{message}}
+            </li>
+            {%endfor%}
+
+        </ul>
+        {%endif%}
+    </div>
+    <div>
+        <form method="post">
+            {%csrf_token%}
+            {{form.as_p}}
+            <button type="submit">save</button>
+        </form>
+    </div>
+</div>
+{%endblock%}
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%block content%}
+<div class="container-fluid">
+
+    <div class="card shadow mb-4">
+        <div>
+        <h2 class="class1">Individual Employee Information</h2>
+        </div>
+        <div class="card-body row g-3 position-relative">
+           <div class="input-group col-md-4">
+             <label class="input-group-text">ID:</label>
+             <div  class="form-control">{{emp.emp_id}}</div>
+           </div>
+            <div class="col-md-6   ">
+                <div class="card position-absolute top-0 end-0 ">
+                    <div class="card-body">
+                        <img src="{{emp.emp_photo.url}}" style="width:12rem">
+                    </div>
+                </div>
+            </div>
+          <div class="input-group col-mb-3">
+             <label class="input-group-text">Name :</label>
+             <div class="form-control">{{emp.emp_first_name|title}} {{emp.emp_last_name|title}}</div>
+          </div>
+         <div class="input-group mb-3">
+            <label class="input-group-text">Father name:</label>
+            <div class="form-control">{{emp.emp_father_name|title}}</div>
+         </div>
+         <div class="input-group mb-3">
+            <label class="input-group-text">Mother name:</label>
+            <div class="form-control">{{emp.emp_mother_name|title}}</div>
+         </div>
+         <div class="input-group mb-3">
+            <label class="input-group-text">Married Status: </label>
+            <div class="form-control">{{emp.emp_married|title}}</div>
+         </div>
+         <div class="input-group mb-3">
+            <label class="input-group-text">Address: </label>
+            <div class="form-control">{{emp.emp_address}}</div>
+         </div>
+         <div class="input-group mb-3">
+            <label class="input-group-text">Gender: </label>
+            <div class="form-control">{{emp.emp_gender|title}}</div>
+         </div>
+         <div class="input-group mb-3">
+            <label class="input-group-text">Blood Group: </label>
+            <div class="form-control">{{emp.emp_blood}}</div>
+         </div>
+         <div class="input-group mb-3">
+            <label class="input-group-text">Phone: </label>
+            <div class="form-control">{{emp.emp_phone}}</div>
+         </div>
+         <div class="input-group mb-3">
+            <label class="input-group-text">Email: </label>
+            <div class="form-control">{{emp.emp_email}}</div>
+         </div>
+         <div class="input-group mb-3">
+            <label class="input-group-text">Birth date: </label>
+            <div class="form-control">{{emp.emp_bod}}</div>
+         </div>
+         <div class="input-group mb-3">
+            <label class="input-group-text">Salary: </label>
+            <div class="form-control">{{emp.emp_salary}}</div>
+         </div>
+         <div class="input-group mb-3">
+            <label class="input-group-text">Job:</label>
+            <div class="form-control">{{emp.emp_job|title}}</div>
+         </div>
+         <div class="input-group mb-3">
+            <label class="input-group-text">Manager:</label>
+            <div class="form-control">{{emp.emp_manager|title}}</div>
+         </div>
+         <div class="input-group mb-3">
+            <label class="input-group-text">Branch:</label>
+            <div class="form-control">{{emp.emp_branch|title}}</div>
+         </div>
+
+
+        </div>
+        <div class="d-grid gap-2 col-6 ">
+           <a  class="btn btn-primary " href="{%url 'edit_emp' emp.emp_id%}">Edit</a>
+           <a class="btn btn-primary" href="{%url 'del_emp' emp.emp_id%}">Delete</a>
+        </div>
+
+    </div>
+
+</div>
+{%endblock%}
+</body>
+</html>

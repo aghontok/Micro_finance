@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%block content%}
+<div>
+    <div>
+        <h2>User list</h2>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>User Name</th>
+            </tr>
+            {%for u in usr%}
+            <tr>
+                <td>{{u.id}}</td>
+                <td>{{u.username}}</td>
+                <td><a href="{%url 'edit_usr' u.id%}">Edit</a> </td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+</div>
+
+{%endblock%}
+</body>
+</html>

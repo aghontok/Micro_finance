@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%block content%}
+<div>
+    <div>
+        {%if messages%}
+        <ul class="messages">
+            {%for message in messages%}
+            <li {%if message.tag%} class="{{message.tag}}" {%endif%}>
+                {{message}}
+            </li>
+            {%endfor%}
+
+        </ul>
+        {%endif%}
+    </div>
+    <div><h2>Add New Group</h2></div>
+    <div>
+        <form method="post" >
+            {%csrf_token%}
+            <div>
+                <label>Name</label>
+                {{form.gro_name}}
+            </div>
+            <div>
+                <label>Area</label>
+                {{form.gro_area}}
+            </div>
+            <div>
+                <label>Branch</label>
+                {{form.gro_bran}}
+            </div>
+            <input type="submit" name="Submit">
+        </form>
+    </div>
+</div>
+{%endblock%}
+</body>
+</html>

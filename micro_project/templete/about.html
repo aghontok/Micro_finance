@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%block content%}
+<div>
+    <div><h2>About</h2></div>
+    <div><a href="{%url 'login'%}">Login</a> </div>
+    <div> <a href="{%url 'signup'%}">sign up</a> </div>
+</div>
+{%endblock%}
+</body>
+</html>

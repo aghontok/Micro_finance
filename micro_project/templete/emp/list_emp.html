@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{% load static%}
+{%block content%}
+<div class="container-fluid">
+    <div>
+        <div class="d-flex  bg-info flex-md-row "  >
+            <div class="flex-grow-1 p-2">
+                <h2>Employee Informations</h2>
+            </div>
+            <div class="flex-shrink-1 p-1 m-1 ">
+                <a href="{%url 'crt_emp' %}" class="btn btn-primary btn-lg">+Add new</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="">
+      <div class="">
+          <div class="d-flex p-2 flex-lg-row align-items-md-stretch mt-3 gap-3">
+              {% for e in emp%}
+              <div class="card p-2  " style="width:20em;height:auto;">
+                  <div class="p-1 m-1"><img src="{{e.emp_photo.url}}" class=" card-img-top img-thumbnail"></div>
+                  <div class="card-body  ">
+                      <h5 class="card-title">{{e.emp_first_name}} {{e.emp_last_name}}</h5>
+                      <div class="">
+                          <label class="">ID:</label>
+                          {{e.emp_id}}
+                      </div>
+                      <div>
+                          <label class="" >Resignation:</label>
+                          {{e.emp_job}}
+                      </div>
+                      <div>
+                          <label class="">Branch:</label>
+                          {{e.emp_branch}}
+                      </div>
+                      <div class=""><a href="{%url 'details_emp' e.emp_id%}" class="btn btn-primary btn-lg">Details</a> </div>
+                  </div>
+
+              </div>
+
+              {%endfor%}
+          </div>
+      </div>
+    </div>
+</div>
+
+
+{%endblock%}
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%block content%}
+<div class="container-fluid">
+    <div class="alert alert-primary" role="alert">
+        {%if messages%}
+        <ul>
+            {%for message in messages%}
+            <li >{{message}}</li>
+            {%endfor%}
+        </ul>
+        {%endif%}
+    </div>
+
+    <div class="card shadow rounded" >
+        <div class=" mb-3" style="color:green">
+            <h2 class="d-flex p-2 bd-highlight">Update Employee Information</h2>
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text">First Name</label>
+                        <div class="form-control">{{form.emp_first_name}}</div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text">Last Name</label>
+                        <div class="form-control">{{form.emp_last_name}}</div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text">Father Name</label>
+                        <div class="form-control">{{form.emp_father_name}}</div>
+                    </div>
+                    <div class="input-group">
+                        <label class="input-group-text">Mother Name</label>
+                        <div class="form-control">{{form.emp_mother_name}}</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card me-3">
+                        <div><img src="{{form.instance.emp_photo.url}}" class="card-img-top img-thumbnail" width="40px" height="10px"></div>
+                        <div class="card-body">
+                            <div>
+                                <label>Upload New Photo</label>
+                                <div><input type="file" name="image" value="{{form.emp_photo}}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text">Married Status</label>
+                        <div class="form-control">{{form.emp_married}}</div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text">Address</label>
+                        <div class="form-control">{{form.emp_address}}</div>
+                    </div>
+                </div>
+                <div class="col-md-8 ">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text">Gender</label>
+                        <div class="form-control">{{form.emp_gender}}</div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group mb-3">
+                       <label class="input-group-text">Phone:</label>
+                       <div class="form-control">{{form.emp_phone}}</div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group mb-3">
+                       <label class="input-group-text">Email: </label>
+                       <div class="form-control">{{form.emp_email}}</div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                     <div class="input-group mb-3">
+                        <label class="input-group-text">Date of Birth: </label>
+                         <div class="form-control">{{form.emp_bod}}</div>
+                      </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group mb-3">
+                      <label class="input-group-text">Salary:</label>
+                      <div class="form-control">{{form.emp_salary}}</div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group mb-3">
+                      <label class="input-group-text">Blood group</label>
+                      <div class="form-control">{{form.emp_blood}}</div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group mb-3">
+                       <label class="input-group-text">Manager:</label>
+                       <div class="form-control">{{form.emp_manager}}</div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group mb-3">
+                      <label class="input-group-text">Job:</label>
+                      <div class="form-control">{{form.emp_job}}</div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                     <div class="input-group mb-3">
+                       <label class="input-group-text">Branch:</label>
+                       <div class="form-control">{{form.emp_branch}}</div>
+                     </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col"><a href="{%url 'list_emp'%}" class="btn btn-primary btn-lg">Back</a> </div>
+                <div class="col"><button type="submit" class="btn btn-primary btn-lg">Save</button> </div>
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock%}
+</body>
+</html>

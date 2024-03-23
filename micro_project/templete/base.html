@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'css\stylebootstap\css\bootstrap.css' %}" rel="stylesheet" >
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="D:\my project\micro_project\templete\static\project.css" rel="stylesheet">
+
+
+    <title>Title</title>
+</head>
+<body>
+{%block content%}
+
+<div>
+   <ul class="nav">
+     <li class="nav-item">
+        <a class="nav-link " aria-current="page" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+       <a class="nav-link" href="#">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Welcome</a>
+    </li>
+
+   </ul>
+</div>
+
+
+{%endblock%}
+
+<!--java script-->
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}" ></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%block content%}
+<div>
+    <div>
+        <h2>Job Inforamtion</h2>
+    </div>
+    <div>
+        <table class="tab">
+            <tr class="tab-th">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Maximum Salary</th>
+                <th>Minimum Salary</th>
+            </tr>
+            {%for j in job%}
+            <tr class="tab-td">
+                <td>{{j.job_id}}</td>
+                <td>{{j.job_name|title}}</td>
+                <td>{{j.max_salary}}</td>
+                <td>{{j.mini_salary}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+</div>
+{%endblock%}
+</body>
+</html>

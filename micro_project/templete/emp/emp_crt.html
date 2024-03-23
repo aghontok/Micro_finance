@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%load crispy_forms_tags%}
+{%block content%}
+<div >
+    <div>
+        {%if messages%}
+        <ul class="messages">
+            {%for message in messages%}
+            <li {%if message.tag%} class="{{message.tag}}" {%endif%}>
+                {{message}}
+            </li>
+            {%endfor%}
+
+        </ul>
+        {%endif%}
+    </div>
+    <div >
+        <h2 class="class1"> Add New Employee</h2>
+    </div>
+    <div>
+
+    </div>
+
+    <div>
+        <form method="post" class="row g-3">
+            {%csrf_token%}
+            <div class="group">
+                <label class="group-text">ID: </label>
+                <div class="class2">{{form.emp_id}}</div>
+            </div>
+
+            <div class="group " >
+                <label  class="group-text">First Name: </label>
+                <div class="class2" >{{form.emp_first_name}}</div>
+            </div>
+
+            <div class="group">
+                <label class="group-text">Last Name: </label>
+                <div class="class2">{{form.emp_last_name}}</div>
+            </div>
+            <div class="group">
+                <label class="group-text">Father Name: </label>
+                <div class="class2">{{form.emp_father_name}}</div>
+            </div>
+            <div class="group">
+                <label class="group-text">Mother Name: </label>
+                <div class="class2">{{form.emp_mother_name}}</div>
+            </div>
+            <div class="group">
+                <label class="group-text">Married status</label>
+                <div class="class2">{{form.emp_married}}</div>
+            </div>
+            <div class="group">
+                <label class="group-text">Address: </label>
+                <div class="class2"> {{form.emp_address}}</div>
+            </div>
+            <div class="group">
+                <label class="group-text">Gender: </label>
+                <div class="class2">{{form.emp_gender}}</div>
+            </div>
+            <div class="group">
+                <label class="group-text">Phone:</label>
+                <div class="class2">{{form.emp_phone}}</div>
+            </div>
+            <div class="group">
+                <label class="group-text">Email: </label>
+                <div class="class2">{{form.emp_email}}</div>
+            </div>
+            <div class="group">
+                <label class="group-text">Date of Birth: </label>
+                <div class="class2">{{form.emp_bod}}</div>
+            </div>
+            <div class="group">
+                <label class="group-text">Salary:</label>
+                <div class="class2">{{form.emp_salary}}</div>
+            </div>
+            <div class="group">
+                <label class="group-text">Blood group</label>
+                <div class="class2">{{form.emp_blood}}</div>
+            </div>
+            <div class="group">
+                <label class="group-text">Manager:</label>
+                <div class="class2">{{form.emp_manager}}</div>
+            </div>
+            <div class="group">
+                <label class="group-text">Job:</label>
+                <div class="class2">{{form.emp_job}}</div>
+            </div>
+            <div class="group">
+                <label class="group-text">Branch:</label>
+                <div class="class2">{{form.emp_branch}}</div>
+            <div class=" group ">
+                <label class="group-text">Chose photo</label>
+                <div class="class2">{{form.emp_photo}}</div>
+            </div>
+
+            <div class=" ">
+                <a class="btn btn-primary btn-lg" href="{%url 'list_emp'%}">Back</a>
+                <button type="submit" class="btn btn-primary btn-lg">Add</button>
+
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock%}
+</body>
+</html>

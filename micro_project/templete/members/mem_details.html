@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%block content%}
+<div>
+    <div>
+        <a href="">Show Nominee</a>
+    </div>
+
+    <div>
+        <h2>Individual Member Information</h2>
+    </div>
+    <div>
+        <div>
+            <label>Name: {{mem.mem_first_name|title}} {{mem.mem_last_name|title}}</label>
+        </div>
+        <div>
+            <label>Father Name: {{mem.mem_father_name|title}}</label>
+        </div>
+        <div>
+            <label>Mother Name: {{mem.mem_mother_name|title}}</label>
+        </div>
+        <div>
+            <label>Married status: {{mem.mem_married}}</label>
+        </div>
+        <div>
+            <label>Present Address: {{mem.mem_address_pre}}</label>
+        </div>
+        <div>
+            <label>Parmanent Address: {{mem.mem_address_pa}}</label>
+        </div>
+        <div>
+            <label>Phone no: {{mem.mem_phone}}</label>
+        </div>
+        <div>
+            <label>Email: {{mem.mem_email}}</label>
+        </div>
+        <div>
+            <label>Gender: {{mem.mem_gender}}</label>
+        </div>
+        <div>
+            <label>Birth date: {{mem.mem_dob}}</label>
+        </div>
+        <div>
+            <label>Blood group: {{mem.mem_blood}}</label>
+        </div>
+        <div>
+            <label>NID: {{mem.mem_nid}}</label>
+        </div>
+        <div>
+            <label>Religion: {{mem.mem_religion}}</label>
+        </div>
+        <div>
+            <label></label>
+        </div>
+
+    </div>
+    <div>
+        <div><a href="{%url 'list_mem' %}">Back</a></div>
+        <div> <a href="{%url 'edit_mem' mem.mem_id%}">Edit</a> </div>
+
+    </div>
+</div>
+{%endblock%}
+</body>
+</html>

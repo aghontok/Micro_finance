@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%extends 'base.html'%}
+{%block content%}
+<div  id="MyModal" class="modal-xl" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Branch</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form method="post">
+            {%csrf_token%}
+            <div class="mb-3"><label class="form-label">Name</label>
+                {{form.bran_name}}
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Address</label>
+                {{form.bran_address}}
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Location</label>
+                {{form.bran_location}}
+            </div>
+              <div>
+                  <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Add</button>
+                  <button type="button"  ><a href="{%url 'list_bran' %}">close</a> </button>
+              </div>
+          </form>
+
+
+
+
+
+
+
+      </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{%endblock%}
+
+<script>
+
+</script>
+</body>
+</html>
